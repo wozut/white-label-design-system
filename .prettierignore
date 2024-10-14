@@ -1,0 +1,16 @@
+node_modules/
+.env.development
+package.json
+package-lock.json
+.github/
+tsconfig.json
+*.md
+*.mdx
+*.css
+*.ico
+*.png
+*.mp4
+*.svg
+.prettierrc
+.prettierignore
+.gitignore

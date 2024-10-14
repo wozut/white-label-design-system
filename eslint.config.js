@@ -5,9 +5,8 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import prettier from 'eslint-plugin-prettier'
 
-export default tseslint.config(
-  {
-    ignores: [
+export default [
+  {ignores: [
       'dist',
       'node_modules/',
       'package.json',
@@ -15,23 +14,17 @@ export default tseslint.config(
       '.eslintrc.json',
       'tsconfig.json',
       'next.config.mjs'
-    ],
-    extends: [
-      'plugin:prettier/recommended',
-      'eslint:recommended',
-      'plugin:@typescript-eslint/recommended',
-      'plugin:@typescript-eslint/recommended-type-checked',
-      'plugin:storybook/recommended',
-      js.configs.recommended,
-    ],
+  ]
+  },
+  {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
-    },
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-      project: './tsconfig.json',
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: './tsconfig.json',
+      },
     },
     plugins: {
       '@typescript-eslint': tseslint,
@@ -41,6 +34,7 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      ...tseslint.configs['recommended-type-checked'].rules,
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
@@ -64,6 +58,6 @@ export default tseslint.config(
         },
       ],
       'prettier/prettier': 'error'
-    },
+    }
   }
-)
+]
