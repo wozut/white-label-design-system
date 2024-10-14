@@ -23,6 +23,7 @@
     "dev": "vite",
     "build": "tsc --build ./tsconfig.lib.json && vite build",
     "lint": "eslint .",
+    "format-check": "prettier --check .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -49,48 +50,19 @@
     "@vitejs/plugin-react-swc": "^3.5.0",
     "chromatic": "^11.11.0",
     "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.12",
     "eslint-plugin-storybook": "^0.9.0",
     "glob": "^11.0.0",
     "globals": "^15.9.0",
+    "prettier": "^3.3.3",
     "storybook": "^8.3.5",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.7.0",
     "vite": "^5.4.8",
     "vite-plugin-dts": "^4.2.3",
     "vite-plugin-lib-inject-css": "^2.1.1"
-  },
-  "eslintConfig": {
-    "extends": [
-      "prettier",
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended-type-checked",
-      "plugin:storybook/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    },
-    "rules": {
-      "@typescript-eslint/no-unused-vars": "warn",
-      "@typescript-eslint/require-await": "warn",
-      "@typescript-eslint/explicit-function-return-type": "error",
-      "@typescript-eslint/explicit-module-boundary-types": "error",
-      "@typescript-eslint/no-inferrable-types": "error",
-      "@typescript-eslint/typedef": [
-        "error",
-        {
-          "arrayDestructuring": false,
-          "arrowParameter": false,
-          "memberVariableDeclaration": false,
-          "objectDestructuring": false,
-          "parameter": false,
-          "propertyDeclaration": false,
-          "variableDeclaration": false,
-          "variableDeclarationIgnoreFunction": false
-        }
-      ]
-    }
   }
 }
