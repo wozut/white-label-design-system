@@ -63,7 +63,34 @@
   },
   "eslintConfig": {
     "extends": [
+      "prettier",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended-type-checked",
       "plugin:storybook/recommended"
-    ]
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/require-await": "warn",
+      "@typescript-eslint/explicit-function-return-type": "error",
+      "@typescript-eslint/explicit-module-boundary-types": "error",
+      "@typescript-eslint/no-inferrable-types": "error",
+      "@typescript-eslint/typedef": [
+        "error",
+        {
+          "arrayDestructuring": false,
+          "arrowParameter": false,
+          "memberVariableDeclaration": false,
+          "objectDestructuring": false,
+          "parameter": false,
+          "propertyDeclaration": false,
+          "variableDeclaration": false,
+          "variableDeclarationIgnoreFunction": false
+        }
+      ]
+    }
   }
 }
