@@ -72,6 +72,6 @@
     ]
   },
   "dependencies": {
-    "@typescript-eslint/parser": "^8.9.0"
+    "@typescript-eslint/parser": "^8.11.0"
   }
 }
