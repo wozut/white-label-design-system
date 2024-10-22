@@ -9,7 +9,6 @@
   border-radius: 1.25rem;
   cursor: pointer;
 
-
   &:hover {
     background-color: var(--primary-color-dark-1);
   }
