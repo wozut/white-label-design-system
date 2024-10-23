@@ -2,5 +2,6 @@
   --primary-color-default: #e98818;
   --primary-color-dark-1: #a35e0f;
   --primary-color-dark-2: #5d3609;
-  --text-color: #000000;
+  --text-color: black;
+  --outline-color: black;
 }
